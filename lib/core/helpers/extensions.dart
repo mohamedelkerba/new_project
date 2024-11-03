@@ -1,6 +1,5 @@
 // This extension provides convenient navigation methods for the BuildContext.
 // It adds methods to easily push, replace, and remove routes within the Navigator.
-
 import 'package:flutter/cupertino.dart';
 
 extension Navigation on BuildContext{
