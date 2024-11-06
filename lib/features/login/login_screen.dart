@@ -5,7 +5,6 @@ import 'package:new_project/core/theming/font_weight_helper.dart';
 import 'package:new_project/core/theming/styles.dart';
 import 'package:new_project/features/login/widgets/dont_have_account_text.dart';
 import 'package:new_project/features/login/widgets/terms_and_conditions_text.dart';
-
 import '../../core/widgets/app_text_button.dart';
 import '../../core/widgets/app_text_form_field.dart';
 
@@ -44,41 +43,44 @@ class _LoginScreenState extends State<LoginScreen> {
               key: formKey,
               child: Column(
                 children: [
-                  const AppTextFormField(hintText: 'Email',),
+                  const AppTextFormField(
+                    hintText: 'Email',
+                  ),
                   verticalSpace(18),
-                   AppTextFormField(
+                  AppTextFormField(
                     hintText: 'Password',
                     isObsecureText: isObsecureText,
-                     suffixIcon: GestureDetector(
-                         onTap: (){
-                           setState(() {
-                             isObsecureText=! isObsecureText;
-                           });
-                         },
-                         child: Icon(isObsecureText ? Icons.visibility_off_outlined : Icons.visibility_outlined )),
-
+                    suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isObsecureText = !isObsecureText;
+                          });
+                        },
+                        child: Icon(isObsecureText
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined)),
                   ),
                   verticalSpace(24),
                   Align(
                     alignment: AlignmentDirectional.centerEnd,
-                    child: Text('Forget Password?',
-                    style:TextStyles.font32PrimaryBold.copyWith(
-                      fontSize: 13 ,
-                      fontWeight:FontWeightHelper.normal,
-                    ) ,
+                    child: Text(
+                      'Forget Password?',
+                      style: TextStyles.font32PrimaryBold.copyWith(
+                        fontSize: 13,
+                        fontWeight: FontWeightHelper.normal,
+                      ),
                     ),
                   ),
                   verticalSpace(40),
                   AppTextButton(
                     buttonText: 'Login',
                     textStyle: TextStyles.font16WhiteSemiBold,
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
                   verticalSpace(30),
                   const TermsAndConditionsText(),
                   verticalSpace(40),
                   const DontHaveAccountText(),
-
                 ],
               ))
         ],
